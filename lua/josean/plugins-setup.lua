@@ -32,7 +32,8 @@ return packer.startup(function(use)
   use("wbthomason/packer.nvim")
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
-
+  use("mfussenegger/nvim-dap")
+  use("mfussenegger/nvim-jdtls")
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme

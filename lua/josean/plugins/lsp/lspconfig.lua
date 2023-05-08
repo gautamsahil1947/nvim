@@ -87,6 +87,11 @@ lspconfig["jdlts"].setup({
   on_attach = on_attach,
 })
 
+lspconfig["clangd"].setup({
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
+
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
