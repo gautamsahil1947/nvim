@@ -82,10 +82,15 @@ lspconfig["tailwindcss"].setup({
   on_attach = on_attach,
 })
 
-lspconfig["jdlts"].setup({
+lspconfig["pylsp"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
+
+-- lspconfig["jdlts"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
 
 lspconfig["clangd"].setup({
   capabilities = capabilities,
