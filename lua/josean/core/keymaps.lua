@@ -2,9 +2,9 @@
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "markdown",
   callback = function()
-    vim.opt.shiftwidth = 8
-    vim.opt.tabstop = 8
-    vim.opt.softtabstop = 8
+    vim.opt.shiftwidth = 4
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
   end,
 })
 vim.g.mapleader = " "
