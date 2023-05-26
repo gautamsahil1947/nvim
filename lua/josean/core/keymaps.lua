@@ -1,5 +1,5 @@
 -- set leader key to space
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("filetype", {
   pattern = "markdown",
   callback = function()
     vim.opt.shiftwidth = 4

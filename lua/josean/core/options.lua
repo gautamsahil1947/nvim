@@ -9,6 +9,7 @@ opt.tabstop = 4 -- 2 spaces for tabs (prettier default)
 opt.shiftwidth = 4 -- 2 spaces for indent width
 opt.expandtab = true -- expand tab to spaces
 opt.autoindent = true -- copy indent from current line when starting new one
+opt.syntax = "on"
 
 -- line wrapping
 opt.wrap = false -- disable line wrapping
@@ -37,3 +38,5 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
+vim.g.vimwiki_list = { { path = "~/Documents/vimwiki", ext = ".md" } }
+-- syntax = "markdown",

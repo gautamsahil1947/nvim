@@ -14,10 +14,10 @@ local packer_bootstrap = ensure_packer() -- true if packer was just installed
 -- autocommand that reloads neovim and installs/updates/removes plugins
 -- when file is saved
 vim.cmd([[ 
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
-  augroup end
+augroup packer_user_config
+autocmd!
+autocmd BufWritePost plugins-setup.lua source <afile> | PackerSync
+augroup end
 ]])
 
 -- import packer safely
@@ -33,6 +33,7 @@ return packer.startup(function(use)
   use("lukas-reineke/indent-blankline.nvim")
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
+  use("vimwiki/vimwiki")
   use("catppuccin/nvim")
   use("mfussenegger/nvim-dap")
   use("mfussenegger/nvim-jdtls")
