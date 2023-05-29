@@ -19,7 +19,7 @@ opt.ignorecase = true -- ignore case when searching
 opt.smartcase = true -- if you include mixed case in your search, assumes you want case-sensitive
 
 -- cursor line
-opt.cursorline = true -- highlight the current cursor line
+opt.cursorline = false -- highlight the current cursor line
 
 -- appearance
 
@@ -38,5 +38,4 @@ opt.clipboard:append("unnamedplus") -- use system clipboard as default register
 -- split windows
 opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
-vim.g.vimwiki_list = { { path = "~/Documents/vimwiki", ext = ".md" } }
--- syntax = "markdown",
+opt.pumheight = 12
