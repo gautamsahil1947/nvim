@@ -40,3 +40,9 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 opt.pumheight = 12
 opt.conceallevel = 1
+opt.guicursor = "i:block"
+
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--   virtual_text = false,
+--   underline = false,
+-- })

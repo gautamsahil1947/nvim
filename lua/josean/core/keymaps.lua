@@ -17,6 +17,13 @@ local keymap = vim.keymap -- for conciseness
 
 -- use jk to exit insert mode
 
+-- keymap.set(
+--   "n",
+--   "<leader>tm",
+-- ":! cd /home/sahil/gautamsahil1947/SFML-GameDevelopement-using-Modern-C++/project2/ && g++ Main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio && ./a.out<CR>"
+-- )
+
+keymap.set("n", "<leader>tm", ":! cd /home/sahil/Documents/playground/ && make hello && ./hello <CR>")
 -- clear search highlights
 
 keymap.set("n", "<leader>nh", ":nohlsearch<CR>")

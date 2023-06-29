@@ -14,6 +14,7 @@ end
 telescope.setup({
   -- configure custom mappings
   defaults = {
+
     mappings = {
       i = {
         ["<C-k>"] = actions.move_selection_previous, -- move to prev result
