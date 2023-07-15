@@ -34,6 +34,7 @@ return packer.startup(function(use)
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
   use("catppuccin/nvim")
+  use("norcalli/nvim-colorizer.lua")
 
   use({
     "iamcco/markdown-preview.nvim",
