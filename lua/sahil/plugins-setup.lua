@@ -36,13 +36,12 @@ return packer.startup(function(use)
   use("catppuccin/nvim")
   use("norcalli/nvim-colorizer.lua")
 
+  -- install without yarn or npm
   use({
     "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-    setup = function()
-      vim.g.mkdp_filetypes = { "markdown" }
+    run = function()
+      vim.fn["mkdp#util#install"]()
     end,
-    ft = { "markdown" },
   })
 
   use("mfussenegger/nvim-dap")
