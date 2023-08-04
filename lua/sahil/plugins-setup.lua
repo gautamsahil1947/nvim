@@ -30,19 +30,23 @@ end
 return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
+  -------------Sahil's plugins--------------
   use("lukas-reineke/indent-blankline.nvim")
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
   use("catppuccin/nvim")
   use("norcalli/nvim-colorizer.lua")
-
+  use("Vimjas/vim-python-pep8-indent")
   -- install without yarn or npm
+  -- markdown preview
   use({
     "iamcco/markdown-preview.nvim",
     run = function()
       vim.fn["mkdp#util#install"]()
     end,
   })
+
+  -------------Sahil's plugins--------------
 
   use("mfussenegger/nvim-dap")
   use("mfussenegger/nvim-jdtls")

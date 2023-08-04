@@ -42,4 +42,11 @@ opt.splitright = true -- split vertical window to the right
 opt.splitbelow = true -- split horizontal window to the bottom
 opt.pumheight = 12
 opt.conceallevel = 1
-opt.guicursor = "i:beam,n:block"
+opt.guicursor = "i:block"
+
+opt.hlsearch = false
+opt.incsearch = true
+opt.scrolloff = 8
+
+opt.guicursor =
+  "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"

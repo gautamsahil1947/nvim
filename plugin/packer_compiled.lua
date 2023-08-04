@@ -266,6 +266,11 @@ _G.packer_plugins = {
     path = "/home/sahil/.local/share/nvim/site/pack/packer/start/vim-nightfly-guicolors",
     url = "https://github.com/bluz71/vim-nightfly-guicolors"
   },
+  ["vim-python-pep8-indent"] = {
+    loaded = true,
+    path = "/home/sahil/.local/share/nvim/site/pack/packer/start/vim-python-pep8-indent",
+    url = "https://github.com/Vimjas/vim-python-pep8-indent"
+  },
   ["vim-surround"] = {
     loaded = true,
     path = "/home/sahil/.local/share/nvim/site/pack/packer/start/vim-surround",

@@ -23,11 +23,32 @@ local keymap = vim.keymap -- for conciseness
 -- ":! cd /home/sahil/gautamsahil1947/SFML-GameDevelopement-using-Modern-C++/project2/ && g++ Main.cpp -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio && ./a.out<CR>"
 -- )
 
+-- keymap.set(
+--   "n",
+--   "<leader>tm",
+--   ":! cd /home/sahil/.config/repos/studies/src && g++ -std=c++20 cpp.cpp -o cpp -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Wshadow && ./cpp <CR>"
+-- )
+
+--------------------------------- The Name is The Primeagen ------------------
+keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+
+keymap.set("n", "<leader>y", '"+y')
+keymap.set("v", "<leader>y", '"+y')
+keymap.set("n", "<leader>Y", '"+Y')
+
+keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+
 keymap.set(
   "n",
   "<leader>tm",
-  ":! cd /home/sahil/.config/repos/studies/src && g++ -std=c++20 cpp.cpp -o cpp -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion && ./cpp <CR>"
+  "<cmd>!g++ -std=c++20 -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Wshadow  % -o exe && ./exe<CR>",
+  { silent = true }
 )
+--------------------------------- The Name is The Primeagen ------------------
+
+keymap.set("n", "<leader>mt", ":! cd /home/sahil/.config/repos/studies/src && python python.py<CR>")
+keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
 -- clear search highlights
 
 keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
