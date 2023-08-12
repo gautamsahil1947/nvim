@@ -31,6 +31,12 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
   -------------Sahil's plugins--------------
+  use({
+    "akinsho/org-bullets.nvim",
+    config = function()
+      require("org-bullets").setup()
+    end,
+  })
   use("lukas-reineke/indent-blankline.nvim")
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
@@ -47,8 +53,9 @@ return packer.startup(function(use)
   })
 
   -------------Sahil's plugins--------------
-
+  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
   use("mfussenegger/nvim-dap")
+  use("jay-babu/mason-nvim-dap.nvim")
   use("mfussenegger/nvim-jdtls")
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 

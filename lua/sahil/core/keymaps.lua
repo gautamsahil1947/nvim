@@ -45,6 +45,13 @@ keymap.set(
   "<cmd>!g++ -std=c++20 -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Wshadow  % -o exe && ./exe<CR>",
   { silent = true }
 )
+
+-- keymap.set(
+--   "n",
+--   "<leader>tm",
+--   ":! cd /home/sahil/.config/repos/studies/cpp/ && rm -f exe && make 1>/dev/null && ./exe<CR>",
+--   { silent = true }
+-- )
 --------------------------------- The Name is The Primeagen ------------------
 
 keymap.set("n", "<leader>mt", ":! cd /home/sahil/.config/repos/studies/src && python python.py<CR>")

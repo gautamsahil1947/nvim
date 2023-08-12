@@ -44,7 +44,7 @@ opt.pumheight = 12
 opt.conceallevel = 1
 opt.guicursor = "i:block"
 
-opt.hlsearch = false
+opt.hlsearch = true
 opt.incsearch = true
 opt.scrolloff = 8
 
