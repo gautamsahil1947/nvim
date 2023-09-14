@@ -36,6 +36,8 @@ opt.backspace = "indent,eol,start" -- allow backspace on indent, end of line or 
 
 -- clipboard
 opt.clipboard:append("unnamedplus") -- use system clipboard as default register
+-- this is why all the vim selections are in the system clipboard
+-- and therefore accessible using ctrl+v (ctrl+shift+v for terminal), and middle button
 
 -- split windows
 opt.splitright = true -- split vertical window to the right
@@ -50,3 +52,5 @@ opt.scrolloff = 8
 
 opt.guicursor =
   "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
+
+-- vim.g.clang_format = llvm

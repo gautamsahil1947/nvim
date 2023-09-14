@@ -45,6 +45,7 @@ mason_null_ls.setup({
     "mypy",
     "ruff",
     "black",
+    "clang-format",
   },
   -- auto-install configured formatters & linters (with null-ls)
   automatic_installation = true,

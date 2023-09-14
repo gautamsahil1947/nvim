@@ -38,13 +38,16 @@ keymap.set("v", "<leader>y", '"+y')
 keymap.set("n", "<leader>Y", '"+Y')
 
 keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+-- keymap.set("n", "<leader>x", "<cmd>!lua %<CR>", { silent = true })
 
 keymap.set(
   "n",
   "<leader>tm",
-  "<cmd>!g++ -std=c++20 -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Wshadow  % -o exe && ./exe<CR>",
+  "<cmd>!g++ -std=c++20 -Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion -Wshadow -pedantic-errors  % -o exe && ./exe<CR>",
   { silent = true }
 )
+
+--
 
 keymap.set(
   "n",
