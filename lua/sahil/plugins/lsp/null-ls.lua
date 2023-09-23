@@ -20,7 +20,7 @@ null_ls.setup({
     formatting.prettier, -- js/ts formatter
     formatting.stylua, -- lua formatter
     formatting.black, -- for python formatting
-    formatting.clang_format,
+    -- formatting.clang_format,
     diagnostics.mypy,
     diagnostics.ruff,
     diagnostics.eslint_d.with({ -- js/ts linter

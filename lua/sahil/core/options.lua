@@ -54,3 +54,18 @@ opt.guicursor =
   "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 
 -- vim.g.clang_format = llvm
+
+-- local cpp_formating_group = vim.api.nvim_create_augroup("CppFormatingWithClangd", { clear = true })
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "cpp",
+--   group = cpp_formating_group,
+--   callback = function(args)
+--     vim.api.nvim_create_autocmd("BufWritePre", {
+--       buffer = args.buf,
+--       group = cpp_formating_group,
+--       callback = function()
+--         vim.lsp.buf.format({ async = false, bufnr = args.buf })
+--       end,
+--     })
+--   end,
+-- })
