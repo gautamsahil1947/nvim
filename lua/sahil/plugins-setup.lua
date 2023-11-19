@@ -31,20 +31,41 @@ return packer.startup(function(use)
   -- packer can manage itself
   use("wbthomason/packer.nvim")
   -------------Sahil's plugins--------------
-  use({
-    "akinsho/org-bullets.nvim",
-    config = function()
-      require("org-bullets").setup()
-    end,
-  })
+  -- use({
+  --   "nvimdev/dashboard-nvim",
+  --   event = "VimEnter",
+  --   config = function()
+  --     require("dashboard").setup({
+  --       config = {
+  --         center = {
+  --           {
+  --             icon = "",
+  --             icon_hl = "group",
+  --             desc = "description",
+  --             desc_hl = "group",
+  --             key = "shortcut key in dashboard buffer not keymap !!",
+  --             key_hl = "group",
+  --             key_format = " [%s]", -- `%s` will be substituted with value of `key`
+  --             action = "",
+  --           },
+  --         },
+  --         footer = {},
+  --       },
+  --     })
+  --   end,
+  --   requires = { "nvim-tree/nvim-web-devicons" },
+  -- })
+  -- use("NeogitOrg/neogit")
   use("lukas-reineke/indent-blankline.nvim")
   use("ThePrimeagen/harpoon")
   use("akinsho/toggleterm.nvim")
   use("catppuccin/nvim")
+  -- use({ "ellisonleao/gruvbox.nvim" })
   use("norcalli/nvim-colorizer.lua")
   use("Vimjas/vim-python-pep8-indent")
   -- install without yarn or npm
   -- markdown preview
+  -- it wasn't working but a reinstall fixed the problem
   use({
     "iamcco/markdown-preview.nvim",
     run = function()
@@ -53,12 +74,74 @@ return packer.startup(function(use)
   })
 
   -------------Sahil's plugins--------------
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+  use({
+    "rcarriga/nvim-dap-ui",
+    requires = { "mfussenegger/nvim-dap" },
+  })
   use("mfussenegger/nvim-dap")
   use("jay-babu/mason-nvim-dap.nvim")
-  use("mfussenegger/nvim-jdtls")
   use("nvim-lua/plenary.nvim") -- lua functions that many plugins use
 
+  use({
+    "nvim-neorg/neorg",
+    config = function()
+      require("neorg").setup({
+        load = {
+          ["core.defaults"] = {}, -- Loads default behaviour
+          ["core.concealer"] = {
+            config = {
+              icons = {
+                code_block = {
+                  conceal = true,
+                  content_only = true,
+                },
+              },
+            },
+          }, -- Adds pretty icons to your documents
+          ["core.dirman"] = { -- Manages Neorg workspaces
+            config = {
+              workspaces = {
+                notes = "~/.config/repos/archive/notes",
+              },
+            },
+          },
+        },
+      })
+    end,
+    run = ":Neorg sync-parsers",
+    requires = "nvim-lua/plenary.nvim",
+  })
+
+  -- neorg
+  -- use({
+  --   "jghauser/follow-md-links.nvim",
+  -- })
+  -- use({
+  --   "nvim-neorg/neorg",
+  --   config = function()
+  --     require("neorg").setup({
+  --       -- load = {
+  --       --   ["core.defaults"] = {},
+  --       --   ["core.norg.concealer"] = {
+  --       --     config = {
+  --       --       folds = true,
+  --       --       icon_preset = "basic",
+  --       --     },
+  --       --   },
+  --       --   ["core.dirman"] = {
+  --       --     config = {
+  --       --       workspaces = {
+  --       --         notes = "~/notes",
+  --       --         home = "~/notes/home",
+  --       --       },
+  --       --     },
+  --       --   },
+  --       -- },
+  --     })
+  --   end,
+  --   run = ":Neorg sync-parsers",
+  --   requires = "nvim-lua/plenary.nvim",
+  -- })
   use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 
   use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
@@ -79,7 +162,7 @@ return packer.startup(function(use)
   use("nvim-tree/nvim-web-devicons")
 
   -- statusline
-  use("nvim-lualine/lualine.nvim")
+  -- use("nvim-lualine/lualine.nvim")
 
   -- fuzzy finding w/ telescope
   use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" }) -- dependency for better sorting performance
@@ -98,6 +181,8 @@ return packer.startup(function(use)
   -- managing & installing lsp servers, linters & formatters
   use("williamboman/mason.nvim") -- in charge of managing lsp servers, linters & formatters
   use("williamboman/mason-lspconfig.nvim") -- bridges gap b/w mason & lspconfig
+
+  use("MunifTanjim/prettier.nvim")
 
   -- configuring lsp servers
   use("neovim/nvim-lspconfig") -- easily configure language servers

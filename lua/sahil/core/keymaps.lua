@@ -37,8 +37,8 @@ keymap.set("n", "<leader>y", '"+y')
 keymap.set("v", "<leader>y", '"+y')
 keymap.set("n", "<leader>Y", '"+Y')
 
-keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
--- keymap.set("n", "<leader>x", "<cmd>!lua %<CR>", { silent = true })
+-- keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
+keymap.set("n", "<leader>x", "<cmd>!lua %<CR>", { silent = true })
 
 keymap.set(
   "n",
@@ -48,6 +48,10 @@ keymap.set(
 )
 
 --
+--
+--
+
+-- keymap.set("n", "<leader>tm", "<cmd>!gcc  % -o exe && ./exe<CR>", { silent = true })
 
 keymap.set(
   "n",
@@ -57,6 +61,7 @@ keymap.set(
 )
 --------------------------------- The Name is The Primeagen ------------------
 
+keymap.set("n", "<leader>no", "<cmd>Neorg workspace notes<cr>") -- find files within current working directory, respects .gitignore
 keymap.set("n", "<leader>mt", ":! cd /home/sahil/.config/repos/studies/src && python python.py<CR>")
 keymap.set("n", "<leader>mp", ":MarkdownPreviewToggle<CR>")
 -- clear search highlights
@@ -65,7 +70,7 @@ keymap.set("n", "<leader>nh", ":nohlsearch<CR>")
 keymap.set("n", "<leader>s", ":source %<CR>")
 keymap.set("n", "<leader>q", ":q<CR>")
 keymap.set("n", "<leader>w", ":w!<CR>")
-keymap.set("n", "z", ":ToggleTerm<CR>")
+-- keymap.set("n", "z", ":ToggleTerm<CR>")
 -- delete single character without copying into register
 keymap.set("n", "x", '"_x')
 
@@ -96,7 +101,7 @@ keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>") -- toggle file explorer
 
 -- telescope
 keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>") -- find files within current working directory, respects .gitignore
-keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
+-- keymap.set("n", "<leader>fs", "<cmd>Telescope live_grep<cr>") -- find string in current working directory as you type
 keymap.set("n", "<leader>fc", "<cmd>Telescope grep_string<cr>") -- find string under cursor in current working directory
 keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>") -- list open buffers in current neovim instance
 keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>") -- list available help tags
@@ -109,3 +114,17 @@ keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current c
 
 -- restart lsp server (not on youtube nvim video)
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
+
+-- https://github.com/nvim-telescope/telescope.nvim/issues/2024 (source github)
+-- while fuzzy finding a string, remember where i was
+local telescope = require("telescope.builtin")
+local telescope_last = 0
+function G_telescope_resume()
+  if telescope_last == 0 then
+    telescope_last = 1
+    telescope.live_grep()
+  else
+    telescope.resume()
+  end
+end
+vim.keymap.set("n", " fs", G_telescope_resume)

@@ -18,6 +18,7 @@ end
 
 local keymap = vim.keymap -- for conciseness
 
+-- Set up the key mapping to call the custom function
 -- enable keybinds only for when lsp server available
 local on_attach = function(client, bufnr)
   -- keybind options
@@ -99,12 +100,15 @@ lspconfig["clangd"].setup({
   on_attach = on_attach,
 })
 
-
 lspconfig["bashls"].setup({
   capabilities = capabilities,
   on_attach = on_attach,
 })
 
+-- lspconfig["codelldb"].setup({
+--   capabilities = capabilities,
+--   on_attach = on_attach,
+-- })
 -- configure emmet language server
 lspconfig["emmet_ls"].setup({
   capabilities = capabilities,
